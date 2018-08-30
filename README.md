@@ -12,6 +12,6 @@ optional arguments:
   --loop       loop indefinitely, draw an x to exit
   --exec       execute commands immediately
   --draw       draw the recognized shape as ascii image
-  --save SAVE  draw the recognized shape as ascii image
+  --save SAVE  save a custom shape and command
   --daemon     run this app in the background
 ```

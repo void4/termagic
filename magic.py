@@ -96,7 +96,7 @@ if __name__ == "__main__":
 	parser.add_argument("--loop", dest="loop", action="store_const", const=True, default=False, help="loop indefinitely, draw an x to exit")
 	parser.add_argument("--exec", dest="exec", action="store_const", const=True, default=False, help="execute commands immediately")
 	parser.add_argument("--draw", dest="draw", action="store_const", const=True, default=False, help="draw the recognized shape as ascii image")
-	parser.add_argument("--save", dest="save", action="store", default=False, help="draw the recognized shape as ascii image")
+	parser.add_argument("--save", dest="save", action="store", default=False, help="save a custom shape and command")
 	parser.add_argument("--daemon", dest="daemon", action="store_const", const=True, default=False, help="run this app in the background")
 	args = parser.parse_args()
 	
