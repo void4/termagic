@@ -36,8 +36,10 @@ img1 = once()
 #img.show()
 import imagehash
 
-h1 = imagehash.phash(img1)
-#h2 = imagehash.phash(img2)
+hfunc = imagehash.dhash_vertical#imagehash.average_hash#imagehash.phash
+
+h1 = hfunc(img1)
+#h2 = hfunc(img2)
 #print(h1, h2, h1-h2)
 #img.save("patterns/line.png")
 
@@ -51,7 +53,7 @@ patterns = glob("patterns/*.png")
 ptn = []
 for patternpath in patterns:
 	pattern = Image.open(patternpath)
-	patternhash = imagehash.phash(pattern)
+	patternhash = hfunc(pattern)
 	ptn.append([h1-patternhash, patternpath])
 
 mptn = min(ptn, key=lambda x:x[0])
