@@ -2,6 +2,8 @@
 
 ![Showcase GIF](showcase.gif)
 
+Install requirements: `pip install -r requirements.txt`
+
 ```
 usage: magic.py [-h] [--loop] [--exec] [--draw] [--save SAVE] [--daemon]
 
