@@ -14,6 +14,8 @@ Optionally, for img2txt visualization: `sudo apt install caca-utils`
 
 ### Usage
 
+`python magic.py`
+
 ```
 usage: magic.py [-h] [--loop] [--exec] [--draw] [--save SAVE] [--daemon]
 
@@ -27,3 +29,5 @@ optional arguments:
   --save SAVE  save a custom shape and command
   --daemon     run this app in the background
 ```
+
+If you want to import some of the functionality in your own programs, have a look at `external.py`
