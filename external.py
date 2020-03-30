@@ -1,6 +1,6 @@
 from mouse import capture_line, enhanced_line
 from util import normalize, draw
-from patterns import ImagePatternHandler, PathPatternHandler
+from patterns import PathPatternHandler
 
 
 line = capture_line()
@@ -14,7 +14,7 @@ eline = enhanced_line(norm)
 #for coord in eline:
 #    print(coord)
 
-handler = PathPatternHandler("commands")#ImagePatternHandler("patterns")
+handler = PathPatternHandler()#ImagePatternHandler("patterns")
 
 pattern = handler.input_to_pattern(line)
 
