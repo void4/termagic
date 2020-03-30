@@ -2,18 +2,16 @@
 
 ![Showcase GIF](showcase.gif)
 
-Install requirements: `pip install -r requirements.txt`
+### Installation
 
 ```
 git clone git@github.com:void4/termagic.git
-git submodule init
-git submodule update
-cd traj-dist
-pip install .
-cd ..
+pip install -r requirements.txt
 ```
 
 Optionally, for img2txt visualization: `sudo apt install caca-utils`
+
+### Usage
 
 ```
 usage: magic.py [-h] [--loop] [--exec] [--draw] [--save SAVE] [--daemon]
