@@ -4,10 +4,8 @@ from subprocess import check_output
 
 from pykeyboard import PyKeyboard
 
-from patterns import ImagePatternHandler
+from patterns import PathPatternHandler
 from mouse import capture_line
-
-
 
 k = PyKeyboard()
 
@@ -18,7 +16,7 @@ def runonce():
 	except:
 		return
 
-	handler = ImagePatternHandler()
+	handler = PathPatternHandler()
 
 	pattern = handler.input_to_pattern(line)
 
@@ -29,7 +27,7 @@ def runonce():
 	closest = handler.closest_pattern(pattern)
 
 	if not DAEMON and DRAW:
-		sys.stdout.write(check_output("img2txt %s" % closest["path"], shell=True).decode("utf8"))
+		sys.stdout.write(check_output("img2txt %s" % closest["imagepath"], shell=True).decode("utf8"))
 
 	text = closest["name"]
 

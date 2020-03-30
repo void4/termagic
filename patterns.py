@@ -68,7 +68,8 @@ class PathPatternHandler:
 			with open(patternpath) as patternfile:
 				patterndata = json.loads(patternfile.read())
 			patternname = path_to_purename(patternpath)
-			self.patterns.append({"name": patternname, "data":patterndata, "path": patternpath})
+			imagepath = patternpath.rsplit(".")[-2] + ".png"
+			self.patterns.append({"name": patternname, "data":patterndata, "path": patternpath, "imagepath": imagepath})
 
 	def input_to_pattern(self, line):
 		patterndata = line
@@ -88,8 +89,13 @@ class PathPatternHandler:
 		return closest
 
 	def save_pattern(self, name, pattern):
-		patternpath = os.path.join(self.PATTERNDIR, name+".txt")
-		with open(patternpath, "w+") as patternfile:
+		patterndatapath = os.path.join(self.PATTERNDIR, name+".txt")
+
+		with open(patterndatapath, "w+") as patternfile:
 			patternfile.write(json.dumps(pattern["data"]))
+
+		patternimagepath = os.path.join(self.PATTERNDIR, name+".png")
+		img = draw(pattern["data"])
+		img.save(patternimagepath)
 		# To include the new one. Could be more efficient, but hey
 		self.load_patterns()
