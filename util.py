@@ -1,3 +1,9 @@
+import os
+
+def path_to_purename(path):
+	basename = os.path.basename(path)
+	purename = basename.split(".")[0]
+	return purename
 
 PSIZE = 256
 def scale(xy, scale=PSIZE):
