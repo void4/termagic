@@ -1,42 +1,13 @@
 import os, sys
 import argparse
-from time import time
 from subprocess import check_output
 
-from pymouse import PyMouseEvent
 from pykeyboard import PyKeyboard
 
 from patterns import ImagePatternHandler
+from mouse import capture_line
 
-def capture_line():
-	line = []
-	state = False
-	time_start = None
 
-	class handler(PyMouseEvent):
-		def click(self, x, y, button, d):
-			nonlocal state, time_start
-			if button == 1:
-				if state and not d:
-					self.exit()
-				state = d
-				time_start = time()
-			return(x, y, button)
-
-		def move(self, x, y):
-			nonlocal line
-			if state:
-				line.append([x,y, time()-time_start])
-			return x, y
-
-	test = handler()
-	try:
-		test.run()
-		test.join()
-	except:
-		pass
-
-	return line
 
 k = PyKeyboard()
 
