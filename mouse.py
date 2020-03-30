@@ -32,3 +32,20 @@ def capture_line():
 		pass
 
 	return line
+
+def enhanced_line(line):
+	newline = []
+	for xyt in line:
+		x,y,t = xyt
+		if len(newline) == 0:
+			d = 0
+			v = 0
+			a = 0
+		else:
+			last = newline[-1]
+			d = ((last[0]-x)**2+(last[1]-y)**2)**0.5
+			v = d/t
+			a = v-last[4]
+
+		newline.append([x,y,t,d,v,a])
+	return newline

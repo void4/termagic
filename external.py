@@ -1,10 +1,13 @@
-from magic import capture_line
+from mouse import capture_line, enhanced_line
 from patterns import ImagePatternHandler
 
 
 line = capture_line()
 
-print(line)
+eline = enhanced_line(line)
+
+for coord in eline:
+    print(coord)
 
 handler = ImagePatternHandler("commands")
 
