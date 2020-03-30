@@ -1,23 +1,26 @@
 from mouse import capture_line, enhanced_line
-from patterns import ImagePatternHandler
+from util import normalize
+from patterns import ImagePatternHandler, PathPatternHandler
 
 
 line = capture_line()
 
-eline = enhanced_line(line)
+norm = normalize(line)
+eline = enhanced_line(norm)
 
-for coord in eline:
-    print(coord)
+#for coord in eline:
+#    print(coord)
 
-handler = ImagePatternHandler("commands")
+handler = PathPatternHandler("commands")#ImagePatternHandler("patterns")
 
 pattern = handler.input_to_pattern(line)
 
 commands = [""]
 
 SAVE = False
+name = "b"
 if SAVE:
-	handler.save_pattern(SAVE, pattern)
+	handler.save_pattern(name, pattern)
 	raise RuntimeError("Pattern saved")
 
 closest = handler.closest_pattern(pattern)

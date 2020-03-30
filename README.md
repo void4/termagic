@@ -4,6 +4,15 @@
 
 Install requirements: `pip install -r requirements.txt`
 
+```
+git clone git@github.com:void4/termagic.git
+git submodule init
+git submodule update
+cd traj-dist
+pip install .
+cd ..
+```
+
 Optionally, for img2txt visualization: `sudo apt install caca-utils`
 
 ```
