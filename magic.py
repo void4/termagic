@@ -8,7 +8,7 @@ from pykeyboard import PyKeyboard
 
 from patterns import ImagePatternHandler
 
-def once():
+def capture_line():
 	line = []
 	state = False
 
@@ -41,7 +41,7 @@ k = PyKeyboard()
 def runonce():
 
 	try:
-		line = once()
+		line = capture_line()
 	except:
 		return
 
@@ -49,8 +49,6 @@ def runonce():
 
 	pattern = handler.input_to_pattern(line)
 
-	#h2 = hfunc(img2)
-	#print(h1, h2, h1-h2)
 	if SAVE:
 		handler.save_pattern(SAVE, pattern)
 		raise RuntimeError("Pattern saved")
