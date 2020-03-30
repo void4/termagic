@@ -1,9 +1,12 @@
 from mouse import capture_line, enhanced_line
-from util import normalize
+from util import normalize, draw
 from patterns import ImagePatternHandler, PathPatternHandler
 
 
 line = capture_line()
+
+img = draw(line)
+img.show()
 
 norm = normalize(line)
 eline = enhanced_line(norm)
