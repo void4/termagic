@@ -4,9 +4,13 @@ from patterns import ImagePatternHandler
 
 line = capture_line()
 
+print(line)
+
 handler = ImagePatternHandler("commands")
 
 pattern = handler.input_to_pattern(line)
+
+commands = [""]
 
 SAVE = False
 if SAVE:

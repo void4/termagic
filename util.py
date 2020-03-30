@@ -8,7 +8,7 @@ def path_to_purename(path):
 PSIZE = 256
 def scale(xy, scale=PSIZE):
 	for i in range(len(xy)):
-		xy[i] = [v*(scale-1) for v in xy[i]]
+		xy[i] = [xy[i][0]*(scale-1), xy[i][1]*(scale-1), xy[i][2]]
 
 	return xy
 
@@ -16,11 +16,11 @@ def normalize(xy):
 	xmi = min(xy, key=lambda x:x[0])[0]
 	ymi = min(xy, key=lambda x:x[1])[1]
 	for i in range(len(xy)):
-		xy[i] = [xy[i][0]-xmi, xy[i][1]-ymi]
+		xy[i] = [xy[i][0]-xmi, xy[i][1]-ymi, xy[i][2]]
 	xma = max(xy, key=lambda x:x[0])[0]
 	yma = max(xy, key=lambda x:x[1])[1]
 	for i in range(len(xy)):
-		xy[i] = [xy[i][0]/xma, xy[i][1]/yma]
+		xy[i] = [xy[i][0]/xma, xy[i][1]/yma, xy[i][2]]
 
 	return xy
 
@@ -34,7 +34,7 @@ def draw(xy):
 
 	last = xy[0]
 	for i in range(1, len(xy)):
-		x,y = xy[i]
+		x,y,t = xy[i]
 		#print(x,y)
 		#img.putpixel((int(x),int(y)), 0xffffff)
 		#TODO add time color
