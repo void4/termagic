@@ -1,7 +1,6 @@
 from glob import glob
 import sys
 import os
-from subprocess import check_output
 
 from PIL import Image
 import imagehash

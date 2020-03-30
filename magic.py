@@ -1,6 +1,8 @@
 import os, sys
 import argparse
 
+from subprocess import check_output
+
 from pymouse import PyMouseEvent
 from pykeyboard import PyKeyboard
 

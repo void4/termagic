@@ -4,6 +4,8 @@
 
 Install requirements: `pip install -r requirements.txt`
 
+Optionally, for img2txt visualization: `sudo apt install caca-utils`
+
 ```
 usage: magic.py [-h] [--loop] [--exec] [--draw] [--save SAVE] [--daemon]
 
