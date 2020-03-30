@@ -54,7 +54,7 @@ import json
 class PathPatternHandler:
 	def __init__(self, PATTERNDIR="patterns"):
 		self.PATTERNDIR = PATTERNDIR
-		self.distance = tdist.frechet
+		self.distance = tdist.dtw
 		os.makedirs(self.PATTERNDIR, exist_ok=True)
 		# TODO test imagehash.average_hash, imagehash.phash
 		self.load_patterns()
