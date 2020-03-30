@@ -30,4 +30,6 @@ optional arguments:
   --daemon     run this app in the background
 ```
 
+To save a new pattern, supply its name to the `--save` parameter: `python magic.py --save mypatternname`
+
 If you want to import some of the functionality in your own programs, have a look at `external.py`
