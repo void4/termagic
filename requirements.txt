@@ -1,3 +1,5 @@
 PyUserInput
-PIL
+Pillow
 imagehash
+numpy
+git+git://github.com/bguillouet/traj-dist@54cf21f8c42244c89241b81a3619765fa21db181#egg=trajectory-distance
