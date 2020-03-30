@@ -6,6 +6,7 @@
 
 ```
 git clone git@github.com:void4/termagic.git
+cd termagic
 pip install -r requirements.txt
 ```
 
